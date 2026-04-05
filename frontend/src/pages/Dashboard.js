@@ -103,12 +103,13 @@ export default function Dashboard() {
         <div className="card chart-card fade-up" style={{ animationDelay: '0.4s' }}>
           <div className="chart-title">Spending by Day of Week</div>
           <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={a.by_day} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+            <BarChart data={a.by_day} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
+              barCategoryGap="20%"
               <CartesianGrid strokeDasharray="3 3" stroke="#eeece8" vertical={false} />
               <XAxis dataKey="day" tick={{ fill: '#888880', fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#888880', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => '₹' + v / 1000 + 'k'} />
+              <YAxis tick={{ fill: '#888880', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => '₹' + v / 1000 + 'k'} width={45} />
               <Tooltip {...tooltipStyle} formatter={v => [fmt(v), 'Spent']} />
-              <Bar dataKey="amount" fill="#2d5f8a" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="amount" fill="#2d5f8a" radius={[4, 4, 0, 0]} maxBarSize={60} />
             </BarChart>
           </ResponsiveContainer>
         </div>
