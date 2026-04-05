@@ -1,0 +1,123 @@
+.upload-page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-bg-shape {
+  position: fixed;
+  top: -160px; right: -160px;
+  width: 500px; height: 500px;
+  background: var(--accent3);
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.upload-bg-shape2 {
+  position: fixed;
+  bottom: -120px; left: -120px;
+  width: 360px; height: 360px;
+  background: #e8f5f0;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.upload-center {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.upload-header { text-align: center; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 14px 6px 10px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.brand-icon { font-size: 14px; }
+.brand-name { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
+
+.upload-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+.upload-title em { color: var(--accent2); font-style: normal; }
+.upload-sub { color: var(--text2); font-size: 15px; max-width: 400px; margin: 0 auto; font-weight: 300; }
+
+.dropzone {
+  width: 100%;
+  border: 2px dashed var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+.dropzone:hover { border-color: var(--accent2); background: var(--accent3); box-shadow: var(--shadow-md); }
+.dropzone.dragging { border-color: var(--accent); background: var(--accent3); transform: scale(1.01); }
+.drop-icon { font-size: 32px; margin-bottom: 14px; color: var(--accent2); }
+.drop-primary { font-family: var(--font-body); font-size: 17px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.drop-secondary { color: var(--text3); font-size: 13px; }
+.drop-error { color: var(--red); font-size: 13px; margin-top: 12px; font-weight: 500; }
+
+.upload-loading { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+.load-msg { font-size: 14px; color: var(--text2); font-weight: 500; }
+.load-sub { font-size: 11px; color: var(--text3); font-family: var(--font-mono); }
+
+.upload-divider { display: flex; align-items: center; width: 100%; color: var(--text3); font-size: 12px; gap: 12px; }
+.upload-divider::before, .upload-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.sample-btn {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.sample-btn:hover:not(:disabled) { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: var(--shadow-md); }
+.sample-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.stack-badge {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.badge-title { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; font-weight: 600; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge { font-size: 12px; background: var(--bg3); border: 1px solid var(--border); color: var(--text2); padding: 4px 10px; border-radius: 100px; font-weight: 500; }
+
+.format-guide { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow-sm); }
+.format-title { font-size: 12px; font-weight: 600; margin-bottom: 10px; color: var(--text); text-transform: uppercase; letter-spacing: 0.5px; }
+.format-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 12px; color: var(--text2); line-height: 1.7; }
